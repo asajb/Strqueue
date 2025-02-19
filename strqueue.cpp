@@ -30,7 +30,7 @@
 			mInitializer(); \
 			std::cerr << __func__ << "(" << (arg1) << ", " << (arg2) << ", \"" << (arg3) << "\")\n"; \
 		}
-#define LOG_CALL_3_ARGS_NULL(arg1, arg2) \
+	#define LOG_CALL_3_ARGS_NULL(arg1, arg2) \
 		if constexpr (debug) { \
 			mInitializer(); \
 			std::cerr << __func__ << "(" << (arg1) << ", " << (arg2) << ", NULL)\n"; \
@@ -107,7 +107,7 @@
 
 	namespace cxx {
 
-		extern "C" unsigned long strqueue_new() {
+		unsigned long strqueue_new() {
 
 			LOG_CALL_0_ARGS();
 			
@@ -118,7 +118,7 @@
 			return id;
 		}
 
-		extern "C" void strqueue_delete(unsigned long id) {
+		void strqueue_delete(unsigned long id) {
 
 			LOG_CALL_1_ARG(id);
 
@@ -133,7 +133,7 @@
 
 		}
 
-		extern "C" size_t strqueue_size(unsigned long id) {
+		size_t strqueue_size(unsigned long id) {
 
 			LOG_CALL_1_ARG(id);
 
@@ -152,7 +152,7 @@
 			return answer;
 		}
 
-		extern "C" void strqueue_insert_at(unsigned long id, size_t position, const char* str) {
+		void strqueue_insert_at(unsigned long id, size_t position, const char* str) {
 
 			if (str == nullptr) {
 				LOG_CALL_3_ARGS_NULL(id, position);
@@ -186,7 +186,7 @@
 
 		}
 
-		extern "C" void strqueue_remove_at(unsigned long id, size_t position) {
+		void strqueue_remove_at(unsigned long id, size_t position) {
 
 			LOG_CALL_2_ARGS(id, position);
 
@@ -213,7 +213,7 @@
 
 		}
 
-		extern "C" const char* strqueue_get_at(unsigned long id, size_t position) {
+		const char* strqueue_get_at(unsigned long id, size_t position) {
 
 			LOG_CALL_2_ARGS(id, position);
 
@@ -246,7 +246,7 @@
 
 		}
 
-		extern "C" void strqueue_clear(unsigned long id) {
+		void strqueue_clear(unsigned long id) {
 
 			LOG_CALL_1_ARG(id);
 
@@ -264,7 +264,7 @@
 			LOG_DONE();
 		}
 
-		extern "C" int strqueue_comp(unsigned long id1, unsigned long id2) {
+		int strqueue_comp(unsigned long id1, unsigned long id2) {
 
 			LOG_CALL_2_ARGS(id1, id2);
 
