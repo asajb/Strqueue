@@ -37,19 +37,19 @@ unsigned long id = cxx::strqueue_new();
 ### Inserting a String
 
 ```cpp
-cxx::strqueue_insert_at(id, 0, "example");
+cxx::strqueue_insert_at(id, index, "example");
 ```
 
 ### Retrieving a String
 
 ```cpp
-const char* str = cxx::strqueue_get_at(id, 0);
+const char* str = cxx::strqueue_get_at(id, index);
 ```
 
 ### Removing a String
 
 ```cpp
-cxx::strqueue_remove_at(id, 0);
+cxx::strqueue_remove_at(id, index);
 ```
 
 ### Comparing Queues
