@@ -10,12 +10,20 @@ Strqueue is a C++ library for managing string queues. It provides functionalitie
 - Clear entire queues
 - Compare two queues lexically
 
-## Installation
+## Compilation
 
 To compile the project, use the provided `Makefile`. Ensure you have `gcc` and `g++` installed.
 
 ```sh
 make
+```
+
+## Removal
+
+To remove exec files and object files, use 
+
+```sh
+make clean
 ```
 
 ## Usage
